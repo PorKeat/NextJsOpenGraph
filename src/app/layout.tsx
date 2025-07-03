@@ -51,6 +51,15 @@ const suwannaphum = localFont({
 export const metadata: Metadata = {
   title: "Home | FullStack Morning",
   description: "A simple Next.js app with TypeScript, Tailwind CSS, and Geist UI",
+  openGraph: {
+    title: "Home | FullStack Morning",
+    description: "A simple Next.js app with TypeScript, Tailwind CSS, and Geist UI",
+    url: "https://fullstack-nextjs-morning.vercel.app/",
+    siteName: "FullStack Morning",
+    images: "https://media.licdn.com/dms/image/v2/C5612AQFxx3XzXO9Vew/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1583841493429?e=2147483647&v=beta&t=nOghzOBbkw7pVweJUyiUzSYZtqz8l5EPsdHcnWvy-DU",
+    locale: "en_US",
+    type: "website",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Home | FullStack Morning",

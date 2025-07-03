@@ -19,9 +19,9 @@ export async function generateMetadata(
     const user = await res.json();
 
     return {
-      title: user?.firstName + user?.lastName,
+      title: user?.username,
       openGraph: {
-        title: user?.firstName + user?.lastName,
+        title: user?.username,
         images: [user?.image],
       },
     };
