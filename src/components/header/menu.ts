@@ -31,4 +31,9 @@ export const navLink: NavbarType[] = [
     name: "Dashboard",
     active: false,
   },
+  {
+    path: "/blog-dashboard",
+    name: "Blog-Dashboard",
+    active: false,
+  },
 ];

@@ -1,4 +1,4 @@
-import { Home, Box, User, Newspaper } from "lucide-react";
+import { Home, Box, User, Newspaper, CircuitBoard, Magnet } from "lucide-react";
 
 // Menu items.
 export const items = [
@@ -21,5 +21,15 @@ export const items = [
     title: "Blog",
     url: "/blog",
     icon: Newspaper,
+  },
+  {
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: Magnet,
+  },
+  {
+    title: "Blog-Dashboard",
+    url: "/blog-dashboard",
+    icon: CircuitBoard,
   },
 ];
