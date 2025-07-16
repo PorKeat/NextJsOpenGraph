@@ -1,10 +1,10 @@
-import { Home, Box, User, Newspaper, CircuitBoard, Magnet } from "lucide-react";
+import { Home, Box, User, Newspaper, CircuitBoard, Magnet,Regex } from "lucide-react";
 
 // Menu items.
 export const items = [
   {
     title: "Home",
-    url: "/",
+    url: "/home",
     icon: Home,
   },
   {
@@ -31,5 +31,10 @@ export const items = [
     title: "Blog-Dashboard",
     url: "/blog-dashboard",
     icon: CircuitBoard,
+  },
+  {
+    title: "Register",
+    url: "/register",
+    icon: Regex,
   },
 ];
