@@ -45,7 +45,7 @@ export default function Login() {
   };
 
   return (
-    <Card className="max-w-md mx-auto mt-10">
+    <Card className="max-w-md mx-auto mt-30">
       <CardHeader>
         <CardTitle>Login</CardTitle>
       </CardHeader>

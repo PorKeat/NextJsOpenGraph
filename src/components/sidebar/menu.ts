@@ -23,8 +23,8 @@ export const items = [
     icon: Newspaper,
   },
   {
-    title: "Dashboard",
-    url: "/dashboard",
+    title: "User-Dashboard",
+    url: "/user-dashboard",
     icon: Magnet,
   },
   {

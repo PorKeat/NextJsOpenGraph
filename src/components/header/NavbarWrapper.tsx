@@ -6,7 +6,7 @@ import NavbarComponent from "./NavbarComponent";
 
 export default function NavbarWrapper() {
   const pathname = usePathname();
-  if (pathname === "/dashboard" || pathname ===  "/blog-dashboard") {
+  if (pathname === "/user-dashboard" || pathname ===  "/blog-dashboard") {
     return null;
   }
 

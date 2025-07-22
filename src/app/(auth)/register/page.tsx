@@ -79,7 +79,7 @@ export default function Register() {
   };
 
   return (
-    <Card className="max-w-md mx-auto mt-10">
+    <Card className="max-w-md mx-auto mt-30">
       <CardHeader>
         <CardTitle>Register</CardTitle>
       </CardHeader>

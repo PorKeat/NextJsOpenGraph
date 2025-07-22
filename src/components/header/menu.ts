@@ -27,8 +27,8 @@ export const navLink: NavbarType[] = [
     active: false,
   },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: "/user-dashboard",
+    name: "User-Dashboard",
     active: false,
   },
   {
@@ -37,8 +37,13 @@ export const navLink: NavbarType[] = [
     active: false,
   },
   {
+    path: "/login",
+    name: "Login",
+    active: false,
+  },
+  {
     path: "/register",
     name: "Register",
     active: false,
-  }
+  },
 ];
