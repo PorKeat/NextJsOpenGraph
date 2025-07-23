@@ -1,19 +1,33 @@
 "use client";
 
 import { useAppSelector, useAppDispatch } from "@/lib/hooks";
-import { updateQuantity, removeFromCart, clearCart } from "@/lib/features/cartSlice";
-import React from "react";
+import {
+  updateQuantity,
+  removeFromCart,
+  clearCart,
+} from "@/lib/features/cartSlice";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Cart() {
   const dispatch = useAppDispatch();
   const { items, itemsCount, total } = useAppSelector((state) => state.cart);
 
+  useEffect(() => {
+    console.log("Cart items updated:", items);
+  });
+
   return (
     <div className="mt-24 max-w-4xl mx-auto px-4">
-      <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
-
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
+        <Link href="/product" className="flex items-center">
+          <ChevronRight size={30} />
+        </Link>
+      </div>
       <div className="flex flex-col gap-6">
         <div className="bg-white rounded-2xl shadow p-6">
           <h2 className="text-xl font-semibold mb-4">Cart Summary</h2>
@@ -51,7 +65,7 @@ export default function Cart() {
                 >
                   <div className="flex items-center gap-4">
                     <Image
-                      src={item.thumbnail}
+                      src={item.images[0]}
                       alt={item.title}
                       width={64}
                       height={64}
@@ -60,15 +74,25 @@ export default function Cart() {
                     />
                     <div>
                       <p className="font-medium">{item.title}</p>
-                      <p className="text-sm text-gray-500">Category: {item.category}</p>
-                      <p className="text-sm text-gray-500">Price: ${item.price.toFixed(2)}</p>
+                      <p className="text-sm text-gray-500">
+                        Category: {item.category.name}
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        Price: ${item.price.toFixed(2)}
+                      </p>
                       <div className="flex items-center gap-2 mt-2">
                         <Button
                           size="icon"
                           variant="outline"
                           onClick={() =>
-                            dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))
+                            dispatch(
+                              updateQuantity({
+                                id: item.id,
+                                quantity: item.quantity - 1,
+                              })
+                            )
                           }
+                          className="cursor-pointer"
                         >
                           -
                         </Button>
@@ -77,8 +101,14 @@ export default function Cart() {
                           size="icon"
                           variant="outline"
                           onClick={() =>
-                            dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))
+                            dispatch(
+                              updateQuantity({
+                                id: item.id,
+                                quantity: item.quantity + 1,
+                              })
+                            )
                           }
+                          className="cursor-pointer"
                         >
                           +
                         </Button>
@@ -92,7 +122,7 @@ export default function Cart() {
                     <Button
                       variant="destructive"
                       size="sm"
-                      className="mt-2"
+                      className="mt-2 cursor-pointer"
                       onClick={() => dispatch(removeFromCart(item.id))}
                     >
                       Remove

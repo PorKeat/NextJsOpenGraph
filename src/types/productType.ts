@@ -1,38 +1,47 @@
 export type ProductType = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  images: string[];
+  category: {
     id: number;
-    title: string;
-    description: string;
-    price: number;
-    thumbnail: string;
-    category: string;
-}
+    name: string;
+  };
+};
 
 export type CartItems = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  category: {
     id: number;
-    title: string;
-    description: string;
-    price: number;
-    thumbnail: string;
-    category: string;
-    quantity: number;
-}
+    name: string;
+  };
+  images: string[];
+  quantity: number;
+};
 
 export type ProductDetailType = {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  images: string[];
+  discountPercentage: number;
+  stock: number;
+  category: {
     id: number;
-    title: string;
-    description: string;
-    price: number;
-    thumbnail: string;
-    discountPercentage: number;
-    stock: number;
-    category: string;
-    reviews: Reviews[];
-}
+    name: string;
+  };
+  reviews: Reviews[];
+};
 
 export type Reviews = {
-    rating: number;
-    comment: string;
-    date: number;
-    recieverName: string;
-    reviewerEmail: string;
-}
+  rating: number;
+  comment: string;
+  date: number;
+  receiverName: string;
+  reviewerEmail: string;
+};

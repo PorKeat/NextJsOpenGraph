@@ -12,7 +12,7 @@ export default function ProductPage() {
   const { data, isLoading, error } = useGetProductsQuery();
   if (isLoading) return <Loading/>;
   if (error) return <p className='text-red-500 text-center'>Failed to load products</p>;
-  const products = data?.products as ProductType[];
+  const products = data as ProductType[];
 
   return (
     <section className='w-[90%] mx-auto mb-10 mt-20'>

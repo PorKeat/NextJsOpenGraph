@@ -19,11 +19,11 @@ export default function ProductDetail() {
   console.log(data.title);
 
   return (
-    <div className="w-[90%] mx-auto my-10">
+    <div className="w-[90%] mx-auto mb-10 mt-30">
       <div className="flex bg-white rounded-lg shadow dark:bg-gray-800 flex-col md:flex-row">
         <div className="relative w-full md:w-[50%] flex justify-center items-center">
           <Image
-            src={data.thumbnail}
+            src={data.images[0]}
             alt={data.title}
             width={300}
             height={300}
@@ -33,13 +33,13 @@ export default function ProductDetail() {
         </div>
         <form className="flex-auto p-6">
           <div className="flex flex-wrap">
-            <h1 className="flex-auto text-xl font-semibold dark:text-gray-50">
+            <h1 className="flex-auto text-xl font-semibold dark:text-gray-50 cursor-default">
               {data.title}
             </h1>
-            <div className="text-xl font-semibold text-gray-500 dark:text-gray-300">
+            <div className="text-xl font-semibold text-gray-500 dark:text-gray-300 cursor-default">
               ${data.price}
             </div>
-            <div className="flex-none w-full mt-2 text-sm font-medium text-gray-500 dark:text-gray-300">
+            <div className="flex-none w-full mt-2 text-sm font-medium text-gray-500 dark:text-gray-300 cursor-default">
               In stock
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function ProductDetail() {
               <label className="text-center">
                 <input
                   type="radio"
-                  className="flex items-center justify-center w-6 h-6 accent-violet-600 bg-gray-100 rounded-lg dark:bg-gray-600"
+                  className="flex items-center justify-center w-6 h-6 accent-violet-600 bg-gray-100 rounded-lg dark:bg-gray-600 cursor-pointer"
                   name="size"
                   value="xs"
                 />
@@ -57,7 +57,7 @@ export default function ProductDetail() {
               <label className="text-center">
                 <input
                   type="radio"
-                  className="flex items-center justify-center w-6 h-6 accent-violet-600"
+                  className="flex items-center justify-center w-6 h-6 accent-violet-600 cursor-pointer"
                   name="size"
                   value="s"
                 />
@@ -66,7 +66,7 @@ export default function ProductDetail() {
               <label className="text-center">
                 <input
                   type="radio"
-                  className="flex items-center justify-center w-6 h-6 accent-violet-600"
+                  className="flex items-center justify-center w-6 h-6 accent-violet-600 cursor-pointer"
                   name="size"
                   value="m"
                 />
@@ -75,7 +75,7 @@ export default function ProductDetail() {
               <label className="text-center">
                 <input
                   type="radio"
-                  className="flex items-center justify-center w-6 h-6 accent-violet-600"
+                  className="flex items-center justify-center w-6 h-6 accent-violet-600 cursor-pointer"
                   name="size"
                   value="l"
                 />
@@ -84,7 +84,7 @@ export default function ProductDetail() {
               <label className="text-center">
                 <input
                   type="radio"
-                  className="flex items-center justify-center w-6 h-6 accent-violet-600"
+                  className="flex items-center justify-center w-6 h-6 accent-violet-600 cursor-pointer"
                   name="size"
                   value="xl"
                 />
@@ -101,16 +101,16 @@ export default function ProductDetail() {
           <div className="flex mb-4 text-sm font-medium">
             <button
               type="button"
-              className="py-2 px-4 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
+              className="py-2 px-4 cursor-pointer bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg "
             >
               Add to Cart
             </button>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-300">
+          <p className="text-sm text-gray-500 dark:text-gray-300 cursor-default">
             {data.description}
           </p>
-          <p className="text-lg dark:text-gray-300 bg-blue-300 p-2 rounded-lg mt-5 text-white">
-            Category : {data.category}
+          <p className="text-lg dark:text-gray-300 bg-blue-300 p-2 rounded-lg mt-5 text-white cursor-default">
+            Category : {data.category.name}
           </p>
         </form>
       </div>

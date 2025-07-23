@@ -19,49 +19,52 @@ const CustomFooter = ({ rowCount }: { rowCount: number }) => (
 );
 
 export function AdminDataTable() {
-    const [users, setUsers] = useState<UserType[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [filteredUsers, setFilteredUsers] = useState<UserType[]>([]);
-    const [search, setSearch] = useState('');
+  const [users, setUsers] = useState<UserType[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [filteredUsers, setFilteredUsers] = useState<UserType[]>([]);
+  const [search, setSearch] = useState("");
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL_API}users`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setUsers(data.users);
-                setFilteredUsers(data.users);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
-
-    // Handle search
-    useEffect(() => {
-        const filtered = users.filter((user) =>
-            `${user.firstName} ${user.lastName}`.toLowerCase().includes(search.toLowerCase())
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL_API}users`
         );
-        setFilteredUsers(filtered);
-    }, [search, users]);
-
-    // Handle edit/delete
-    const handleEdit = (id: string) => {
-        console.log('Edit user:', id);
-        // Navigate or open modal...
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setUsers(data.users);
+        setFilteredUsers(data.users);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false);
+      }
     };
+    fetchData();
+  }, []);
 
-    const handleDelete = (id: string) => {
-        console.log('Delete user:', id);
-        // Show confirmation or delete logic...
-    };
+  // Handle search
+  useEffect(() => {
+    const filtered = users.filter((user) =>
+      `${user.firstName} ${user.lastName}`
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    );
+    setFilteredUsers(filtered);
+  }, [search, users]);
 
+  // Handle edit/delete
+  const handleEdit = (id: string) => {
+    console.log("Edit user:", id);
+    // Navigate or open modal...
+  };
+
+  const handleDelete = (id: string) => {
+    console.log("Delete user:", id);
+    // Show confirmation or delete logic...
+  };
 
   const columns: TableColumn<UserType>[] = [
     {

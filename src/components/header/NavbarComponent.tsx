@@ -106,9 +106,9 @@ export default function NavbarComponent() {
             )}
           </div>
 
-          <Link href="/cart">
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5 text-gray-800" />
+          <Link href="/cart"> 
+            <Button variant="ghost" size="icon" className="relative cursor-pointer">
+              <ShoppingCart className="h-5 w-5 text-gray-800 " />
               {itemsCount > 0 && (
                 <div className="absolute -top-1 -right-1 bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-medium">
                   {itemsCount}
@@ -168,7 +168,7 @@ export default function NavbarComponent() {
             </div>
           </div>
 
-          <Link href="/cart" onClick={() => setIsMenuOpen(false)}>
+          <Link href="/cart" onClick={() => setIsMenuOpen(false)} className="cursor-pointer">
             <div className="flex items-center justify-between px-4 py-2 border rounded-lg">
               <span className="text-sm text-gray-700">Cart</span>
               <div className="relative">
