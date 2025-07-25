@@ -167,6 +167,7 @@ export default function ProductActions() {
                     height={50}
                     className="rounded-md mr-4"
                     unoptimized
+                    crossOrigin="anonymous"
                   />
                   <p className="font-medium">{p.title}</p>
                   <p className="text-sm text-gray-500">${p.price}</p>
